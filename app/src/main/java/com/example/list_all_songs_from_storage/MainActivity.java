@@ -119,10 +119,10 @@ public class MainActivity extends AppCompatActivity {
                 String currentLocation = songCursor.getString(songLocation);
 
 //                locationsArrayList.add(currentLocation);
-//                stringArrayList.add(currentTitle + "\n" + currentArtist);
+                stringArrayList.add(currentTitle + "\n" + currentArtist);
                 locationsString += currentLocation;
                 locationsString += "|";
-                stringArrayList.add(currentLocation);
+//                stringArrayList.add(currentLocation);
 //                locationsArray[counter] = currentLocation;
 //                Log.i("currentLocation", currentLocation.getClass().getName());
 //                if(currentLocation instanceof String) {
