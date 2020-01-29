@@ -28,7 +28,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSION_REQUEST = 1;
-
+    MediaPlayer mp = new MediaPlayer();
+    Boolean musicIsPlaying = false;
     ArrayList<String> stringArrayList;
 //    ArrayList<String> locationsArrayList;
 //    ArrayList<String> arrayList;
@@ -90,12 +91,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void playMusic(Integer position) {
-        MediaPlayer mp = new MediaPlayer();
+        if(musicIsPlaying) {
+            mp.pause();
+            mp.release();
+        }
         try {
+            mp = new MediaPlayer();
 //            mp.setDataSource("/storage/emulated/0/Download/Lil Morty - Choppa on me.mp3");
             mp.setDataSource(musicParts[position]);
             mp.prepare();
             mp.start();
+            musicIsPlaying = true;
         } catch (IOException e) {
             e.printStackTrace();
         }
